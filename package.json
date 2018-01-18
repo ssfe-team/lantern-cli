@@ -1,0 +1,29 @@
+{
+  "name": "lantern-cli",
+  "version": "1.0.0",
+  "description": "lantern脚手架",
+  "main": "index.js",
+  "bin": {
+    "lantern": "bin/lantern.js",
+    "lantern-init": "bin/lantern-init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssfe-team/lantern-cli.git"
+  },
+  "keywords": [
+    "lantern-ui",
+    "cli"
+  ],
+  "author": "ssfe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssfe-team/lantern-cli/issues"
+  },
+  "homepage": "https://github.com/ssfe-team/lantern-cli#readme",
+  "dependencies": {
+    "commander": "^2.13.0",
+    "download-git-repo": "^1.0.2",
+    "ora": "^1.3.0"
+  }
+}
