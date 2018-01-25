@@ -3,10 +3,11 @@
 const program = require('commander')
 const ora = require('ora')
 const download = require('download-git-repo')
-const templateUrl = 'binnull/lantern-template'
+const templateUrlArr = ['binnull/lantern-simple-template']
+const templateUrl
 
 program
-  .usage('[project-name]')
+  .usage('<template-name> <project-name>')
 
 // 重写help
 program.on('--help', () => {
@@ -16,9 +17,10 @@ program.on('--help', () => {
   console.log();
 })
 
-program.parse(process.argv);
+const templateName = program.args[0];
+const projectName = program.args[1];
 
-const projectName = program.args[0];
+templateUrl = templateUrlArr[0];
 
 downloadAndCreate();
 
