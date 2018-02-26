@@ -3,10 +3,11 @@
 const program = require('commander')
 const ora = require('ora')
 const download = require('download-git-repo')
-const templateUrl = 'binnull/lantern-template'
+const templateUrlArr = ['binnull/lantern-simple-template']
+var  templateUrl
 
 program
-  .usage('[project-name]')
+  .usage('<template-name> <project-name>')
 
 // 重写help
 program.on('--help', () => {
@@ -18,9 +19,16 @@ program.on('--help', () => {
 
 program.parse(process.argv);
 
-const projectName = program.args[0];
+const templateName = program.args[0];
+const projectName = program.args[1];
 
-downloadAndCreate();
+templateUrl = templateUrlArr[0];
+
+if(templateName != 'yarn-simple') {
+  console.log('  没有当前模板')
+} else {
+  downloadAndCreate();
+}
 
 function downloadAndCreate() {
   const wait = ora('模版下载中...');
