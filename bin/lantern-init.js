@@ -4,7 +4,7 @@ const program = require('commander')
 const ora = require('ora')
 const download = require('download-git-repo')
 const templateUrlArr = ['binnull/lantern-simple-template']
-const templateUrl
+var  templateUrl
 
 program
   .usage('<template-name> <project-name>')
@@ -17,12 +17,18 @@ program.on('--help', () => {
   console.log();
 })
 
+program.parse(process.argv);
+
 const templateName = program.args[0];
 const projectName = program.args[1];
 
 templateUrl = templateUrlArr[0];
 
-downloadAndCreate();
+if(templateName != 'yarn-simple') {
+  console.log('  没有当前模板')
+} else {
+  downloadAndCreate();
+}
 
 function downloadAndCreate() {
   const wait = ora('模版下载中...');
