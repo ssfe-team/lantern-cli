@@ -5,5 +5,3 @@ require('commander')
   .usage('暂时只有唯一指令: lantern init <template-name> <project-name>')
   .command('init', 'create a new project for lantern')
   .parse(process.argv)
-
-  console.log('master test');
