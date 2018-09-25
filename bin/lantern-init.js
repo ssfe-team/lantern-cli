@@ -24,7 +24,7 @@ const projectName = program.args[1];
 
 templateUrl = templateUrlArr[0];
 
-if(templateName != 'yarn-simple') {
+if(templateName != 'webpack-simple') {
   console.log('  没有当前模板')
 } else {
   downloadAndCreate();
