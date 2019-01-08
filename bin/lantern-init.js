@@ -3,7 +3,7 @@
 const program = require('commander')
 const ora = require('ora')
 const download = require('download-git-repo')
-const templateUrlArr = ['binnull/lantern-simple-template']
+const templateUrlArr = ['ssfe-team/lantern-template']
 var  templateUrl
 
 program
