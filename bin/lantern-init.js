@@ -31,7 +31,7 @@ if(templateName != 'yarn-simple') {
 }
 
 function downloadAndCreate() {
-  const wait = ora('模版下载中...');
+  const wait = ora('模板下载中...');
   wait.start();
   download(templateUrl, projectName, err => {
     wait.stop();

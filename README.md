@@ -1,2 +1,3 @@
 # lantern-cli
-lantern脚手架
+
+lantern 脚手架
