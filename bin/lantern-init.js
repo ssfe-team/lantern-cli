@@ -3,8 +3,6 @@
 const program = require('commander')
 const ora = require('ora')
 const download = require('download-git-repo')
-const templateUrlArr = ['ssfe-team/lantern-template']
-var  templateUrl
 
 program
   .usage('<template-name> <project-name>')
@@ -22,18 +20,14 @@ program.parse(process.argv);
 const templateName = program.args[0];
 const projectName = program.args[1];
 
-templateUrl = templateUrlArr[0];
+const officialTemplate = 'ssfe-team/' + templateName
 
-if(templateName != 'webpack-simple') {
-  console.log('  没有当前模板')
-} else {
-  downloadAndCreate();
-}
+downloadAndCreate(officialTemplate)
 
-function downloadAndCreate() {
+function downloadAndCreate(template) {
   const wait = ora('模板下载中...');
   wait.start();
-  download(templateUrl, projectName, err => {
+  download(template, projectName, err => {
     wait.stop();
     if(err) {
       console.log('下载失败');
