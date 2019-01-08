@@ -3,7 +3,7 @@
 const program = require('commander')
 const ora = require('ora')
 const download = require('download-git-repo')
-const templateUrlArr = ['binnull/lantern-simple-template']
+const templateUrlArr = ['ssfe-team/lantern-template']
 var  templateUrl
 
 program
@@ -31,7 +31,7 @@ if(templateName != 'webpack-simple') {
 }
 
 function downloadAndCreate() {
-  const wait = ora('模版下载中...');
+  const wait = ora('模板下载中...');
   wait.start();
   download(templateUrl, projectName, err => {
     wait.stop();
