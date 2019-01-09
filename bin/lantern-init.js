@@ -24,6 +24,11 @@ const officialTemplate = 'ssfe-team/' + templateName
 
 downloadAndCreate(officialTemplate)
 
+/**
+ * Download a generate from a template repo.
+ *
+ * @param {String} template
+ */
 function downloadAndCreate(template) {
   const wait = ora('模板下载中...');
   wait.start();
